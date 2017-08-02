@@ -1,5 +1,7 @@
 package jarek;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,11 +35,15 @@ public class Ctrl1 {
     return sb.toString();
   }
 
-  @RequestMapping(value = "/page", produces = MediaType.TEXT_PLAIN_VALUE)
-  public String pageText()
+  @RequestMapping(
+    value = "/page",
+    produces = MediaType.TEXT_PLAIN_VALUE
+    )
+  public String pageText(HttpServletResponse resp)
   {
     StringBuilder sb = new StringBuilder();
     sb.append("item\n");
+    resp.setHeader("Access-Control-Allow-Origin", "*");
     return sb.toString();
   }
 

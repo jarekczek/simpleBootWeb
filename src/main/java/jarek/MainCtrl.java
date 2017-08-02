@@ -20,6 +20,7 @@ public class MainCtrl {
     sb.append("<html><ul>");
     sb.append("<li><a href='/stop'>stop</a></li>");
     sb.append("<li><a href='/page'>page</a></li>");
+    sb.append("<li><a href='/ajax.html'>ajax.html</a></li>");
     sb.append("</ul></html>");
     return sb.toString();
   }
